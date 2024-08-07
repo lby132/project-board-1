@@ -14,6 +14,7 @@ import java.util.Set;
         @Index(columnList = "createdAt"),
         @Index(columnList = "createdBy")
 })
+@Entity
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Hashtag extends AuditingFields {
 
@@ -25,9 +26,7 @@ public class Hashtag extends AuditingFields {
     @ManyToMany(mappedBy = "hashtags")
     private Set<Article> articles = new LinkedHashSet<>();
 
-    @Setter
-    @Column(nullable = false)
-    private String hashtagName;
+    @Setter @Column(nullable = false) private String hashtagName; // 해시태그 이름
 
     private Hashtag(String hashtagName) {
         this.hashtagName = hashtagName;
@@ -36,6 +35,7 @@ public class Hashtag extends AuditingFields {
     public static Hashtag of(String hashtagName) {
         return new Hashtag(hashtagName);
     }
+
 
     @Override
     public boolean equals(Object o) {

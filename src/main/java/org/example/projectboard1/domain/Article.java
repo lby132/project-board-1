@@ -51,6 +51,10 @@ public class Article extends AuditingFields {
         this.content = content;
     }
 
+    public static Article of(UserAccount userAccount, String title, String content) {
+        return null;
+    }
+
     public void addHashtags(Collection<Hashtag> hashtags) {
         this.getHashtags().addAll(hashtags);
     }
