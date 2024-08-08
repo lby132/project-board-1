@@ -32,9 +32,9 @@ public class ArticleService {
             case ID -> articleRepository.findByUserAccount_UserIdContaining(searchKeyword, pageable).map(ArticleDto::from);
             case NICKNAME -> articleRepository.findByUserAccount_NicknameContaining(searchKeyword, pageable).map(ArticleDto::from);
             case HASHTAG -> articleRepository.findByHashtagNames(
-                    Arrays.stream(searchKeyword.split(" ")).toList(),
-                    pageable
-            )
+                            Arrays.stream(searchKeyword.split(" ")).toList(),
+                            pageable
+                    )
                     .map(ArticleDto::from);
         };
     }

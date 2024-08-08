@@ -41,6 +41,5 @@ public class ArticleController {
         map.addAttribute("searchTypeHashtag", SearchType.HASHTAG);
 
         return "articles/index";
-
     }
 }
