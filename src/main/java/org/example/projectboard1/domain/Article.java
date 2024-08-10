@@ -52,7 +52,7 @@ public class Article extends AuditingFields {
     }
 
     public static Article of(UserAccount userAccount, String title, String content) {
-        return null;
+        return new Article(userAccount, title, content);
     }
 
     public void addHashtags(Collection<Hashtag> hashtags) {
