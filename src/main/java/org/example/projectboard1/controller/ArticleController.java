@@ -3,6 +3,7 @@ package org.example.projectboard1.controller;
 import lombok.RequiredArgsConstructor;
 import org.example.projectboard1.domain.constant.SearchType;
 import org.example.projectboard1.dto.response.ArticleResponse;
+import org.example.projectboard1.dto.response.ArticleWithCommentsResponse;
 import org.example.projectboard1.service.ArticleService;
 import org.example.projectboard1.service.PaginationService;
 import org.springframework.data.domain.Page;
@@ -46,6 +47,6 @@ public class ArticleController {
 
 //    @GetMapping("{articleId}")
 //    public String article(@PathVariable Long articleId, ModelMap map) {
-//        ArticleWithCommentsResponse.from()
+//        ArticleWithCommentsResponse.
 //    }
 }
