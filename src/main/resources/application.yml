@@ -3,12 +3,12 @@ management.endpoints.web.exposure.include: "*"
 
 logging:
   level:
-    com.fastcampus.projectboard: debug
+    org.example.projectboard1: debug
     org.springframework.web.servlet: debug
     org.hibernate.type.descriptor.sql.BasicBinder: trace
 
 spring:
-  application.name: project-board
+  application.name: project-board-1
   datasource:
     url: jdbc:mysql://localhost:3306/boardcamp
     username: root
@@ -24,6 +24,7 @@ spring:
         format_sql: true
         default_batch_fetch_size: 100
         dialect: org.hibernate.dialect.MySQLDialect
+  sql.init.mode: always
 
 ---
 

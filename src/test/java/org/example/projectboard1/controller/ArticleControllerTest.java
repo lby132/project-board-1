@@ -1,5 +1,6 @@
 package org.example.projectboard1.controller;
 
+import org.example.projectboard1.config.TestSecurityConfig;
 import org.example.projectboard1.domain.constant.SearchType;
 import org.example.projectboard1.service.ArticleService;
 import org.example.projectboard1.service.PaginationService;
@@ -26,8 +27,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @DisplayName("View 컨트롤러 - 게시글")
-//@Import({TestSecurityConfig.class, FormDataEncoder.class})
-@Import(FormDataEncoder.class)
+@Import({TestSecurityConfig.class, FormDataEncoder.class})
 @WebMvcTest(ArticleController.class)
 class ArticleControllerTest {
 
