@@ -1,9 +1,11 @@
 package org.example.projectboard1.service;
 
+import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.example.projectboard1.domain.constant.SearchType;
 import org.example.projectboard1.dto.ArticleDto;
+import org.example.projectboard1.dto.ArticleWithCommentsDto;
 import org.example.projectboard1.respository.ArticleRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -37,5 +39,15 @@ public class ArticleService {
                     )
                     .map(ArticleDto::from);
         };
+    }
+
+    public ArticleWithCommentsDto getArticleWithComments(Long articleId) {
+        return articleRepository.findById(articleId)
+                .map(ArticleWithCommentsDto::from)
+                .orElseThrow(() -> new EntityNotFoundException("게시글이 없습니다. - articleId: " + articleId));
+    }
+
+    public Object getArticleCount() {
+        return articleRepository.count();
     }
 }

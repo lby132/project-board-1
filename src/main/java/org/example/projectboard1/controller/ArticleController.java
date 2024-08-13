@@ -2,6 +2,7 @@ package org.example.projectboard1.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.example.projectboard1.domain.constant.SearchType;
+import org.example.projectboard1.dto.ArticleWithCommentsDto;
 import org.example.projectboard1.dto.response.ArticleResponse;
 import org.example.projectboard1.dto.response.ArticleWithCommentsResponse;
 import org.example.projectboard1.service.ArticleService;
@@ -45,8 +46,15 @@ public class ArticleController {
         return "articles/index";
     }
 
-//    @GetMapping("{articleId}")
-//    public String article(@PathVariable Long articleId, ModelMap map) {
-//        ArticleWithCommentsResponse.
-//    }
+    @GetMapping("/{articleId}")
+    public String article(@PathVariable Long articleId, ModelMap map) {
+        ArticleWithCommentsResponse article = ArticleWithCommentsResponse.from(articleService.getArticleWithComments(articleId));
+
+        map.addAttribute("article", article);
+        map.addAttribute("articleComments", article.articleCommentsResponse());
+        map.addAttribute("totalCount", articleService.getArticleCount());
+        map.addAttribute("searchTypeHashtag", SearchType.HASHTAG);
+
+        return "articles/detail";
+    }
 }

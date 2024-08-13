@@ -25,7 +25,7 @@ public record ArticleWithCommentsResponse(
 ) {
 
     public static ArticleWithCommentsResponse of(Long id, String title, String content, Set<String> hashtags, LocalDateTime createdAt, String email, String nickname, String userId, Set<ArticleCommentResponse> articleCommentsResponse) {
-        return new ArticleWithCommentsResponse(id, title, content, hashtags, createdAt, email, nickname, userId, articleCommentsResponse)
+        return new ArticleWithCommentsResponse(id, title, content, hashtags, createdAt, email, nickname, userId, articleCommentsResponse);
     }
 
     public static ArticleWithCommentsResponse from(ArticleWithCommentsDto dto) {
@@ -45,7 +45,7 @@ public record ArticleWithCommentsResponse(
                 dto.userAccountDto().email(),
                 nickname,
                 dto.userAccountDto().userId(),
-                oran
+                organizeChildComments(dto.articleCommentDtos())
         );
     }
 
