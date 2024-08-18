@@ -1,6 +1,7 @@
 package org.example.projectboard1.controller;
 
 import lombok.RequiredArgsConstructor;
+import org.example.projectboard1.domain.constant.FormStatus;
 import org.example.projectboard1.domain.constant.SearchType;
 import org.example.projectboard1.dto.ArticleWithCommentsDto;
 import org.example.projectboard1.dto.response.ArticleResponse;
@@ -75,4 +76,12 @@ public class ArticleController {
 
         return "articles/search-hashtag";
     }
+
+    @GetMapping("/form")
+    public String articleForm(ModelMap map) {
+        map.addAttribute("formStatus", FormStatus.CREATE);
+
+        return "articles/form";
+    }
+
 }
