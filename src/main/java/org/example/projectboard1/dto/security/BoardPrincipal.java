@@ -47,6 +47,16 @@ public record BoardPrincipal(
         );
     }
 
+    public UserAccountDto toDto() {
+        return UserAccountDto.of(
+                username,
+                password,
+                email,
+                nickname,
+                memo
+        );
+    }
+
     @Override
     public String getUsername() {
         return username;
