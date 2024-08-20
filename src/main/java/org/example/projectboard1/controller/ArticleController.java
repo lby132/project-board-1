@@ -116,4 +116,14 @@ public class ArticleController {
         return "redirect:/articles/" + articleId;
     }
 
+    @PostMapping("/{articleId}/delete")
+    public String deleteArticle(
+            @PathVariable Long articleId,
+            @AuthenticationPrincipal BoardPrincipal boardPrincipal
+    ) {
+        articleService.deleteArticle(articleId, boardPrincipal.getUsername());
+
+        return "redirect:/articles";
+    }
+
 }
