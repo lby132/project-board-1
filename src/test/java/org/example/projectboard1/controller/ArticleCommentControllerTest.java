@@ -1,11 +1,10 @@
-package com.fastcampus.projectboard.controller;
+package org.example.projectboard1.controller;
 
-import com.fastcampus.projectboard.config.SecurityConfig;
-import com.fastcampus.projectboard.config.TestSecurityConfig;
-import com.fastcampus.projectboard.dto.ArticleCommentDto;
-import com.fastcampus.projectboard.dto.request.ArticleCommentRequest;
-import com.fastcampus.projectboard.service.ArticleCommentService;
-import com.fastcampus.projectboard.util.FormDataEncoder;
+import org.example.projectboard1.config.TestSecurityConfig;
+import org.example.projectboard1.dto.ArticleCommentDto;
+import org.example.projectboard1.dto.request.ArticleCommentRequest;
+import org.example.projectboard1.service.ArticleCommentService;
+import org.example.projectboard1.util.FormDataEncoder;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +22,6 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.BDDMockito.then;
 import static org.mockito.BDDMockito.willDoNothing;
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.csrf;
-import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.user;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 

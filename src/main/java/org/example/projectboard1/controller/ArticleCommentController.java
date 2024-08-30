@@ -1,9 +1,9 @@
-package com.fastcampus.projectboard.controller;
+package org.example.projectboard1.controller;
 
-import com.fastcampus.projectboard.dto.request.ArticleCommentRequest;
-import com.fastcampus.projectboard.dto.security.BoardPrincipal;
-import com.fastcampus.projectboard.service.ArticleCommentService;
 import lombok.RequiredArgsConstructor;
+import org.example.projectboard1.dto.request.ArticleCommentRequest;
+import org.example.projectboard1.dto.security.BoardPrincipal;
+import org.example.projectboard1.service.ArticleCommentService;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;

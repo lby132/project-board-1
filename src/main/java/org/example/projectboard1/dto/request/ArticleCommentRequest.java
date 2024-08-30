@@ -1,7 +1,8 @@
-package com.fastcampus.projectboard.dto.request;
+package org.example.projectboard1.dto.request;
 
-import com.fastcampus.projectboard.dto.ArticleCommentDto;
-import com.fastcampus.projectboard.dto.UserAccountDto;
+
+import org.example.projectboard1.dto.ArticleCommentDto;
+import org.example.projectboard1.dto.UserAccountDto;
 
 public record ArticleCommentRequest(
         Long articleId,
