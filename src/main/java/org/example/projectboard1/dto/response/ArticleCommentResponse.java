@@ -25,7 +25,7 @@ public record ArticleCommentResponse(
         return ArticleCommentResponse.of(id, content, createdAt, email, nickname, userId, null);
     }
 
-    private static ArticleCommentResponse of(Long id, String content, LocalDateTime createdAt, String email, String nickname, String userId, Long parentCommentId) {
+    public static ArticleCommentResponse of(Long id, String content, LocalDateTime createdAt, String email, String nickname, String userId, Long parentCommentId) {
         Comparator<ArticleCommentResponse> childCommentComparator = Comparator
                 .comparing(ArticleCommentResponse::createdAt)
                 .thenComparing(ArticleCommentResponse::id);
@@ -49,15 +49,11 @@ public record ArticleCommentResponse(
         );
     }
 
-    public ArticleComment toEntity(Article article, UserAccount userAccount) {
-        return ArticleComment.of(
-                article,
-                userAccount,
-                content
-        );
+    public boolean hasParentComment() {
+        return parentCommentId != null;
     }
 
-    public boolean hasParentComment() {
+    public boolean hashParentComment() {
         return parentCommentId != null;
     }
 }
